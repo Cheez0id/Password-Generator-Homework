@@ -6,10 +6,17 @@ var uppercasetext = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numerictext = "0123456789";
 var punctuationtext = "!@#$%^&*()_+~`|}{[]\:;?><,./-=";
 
+
+
 function generatePassword(){      
   console.log ("function is still working!"); 
   var lowercase = window.prompt ("Password length (min 8 - max 128)?", "8-128"); 
-  if (lowercase = null) generatePassword();
+  // the prompt called lowercase is going to return whatever the input is (text); else "cancel" will stop stuff.
+  if (lowercase === null) {
+    return;
+  } else {
+    console.log (lowercase + "this second part is doing something!")
+  }
 }
 
 
