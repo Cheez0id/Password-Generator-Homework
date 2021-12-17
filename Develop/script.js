@@ -6,9 +6,13 @@ var uppercasetext = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numerictext = "0123456789";
 var punctuationtext = "!@#$%^&*()_+~`|}{[]\:;?><,./-=";
 
-function generateLowercase(){      
-  console.log ("lowercase function is working!");
+function generatePassword(){      
+  console.log ("function is still working!"); 
+  var lowercase = window.prompt ("Password length (min 8 - max 128)?", "8-128"); 
+  if (lowercase = null) generatePassword();
 }
+
+
 
 // //function makeid() {
 //   var text = "";
@@ -40,20 +44,20 @@ function writePassword() {
 
 //TODO : MAKE GENERATEPASSWORD FUNCTION. The button needs to: define what is Not allowed through validation and create a password if entries are valid; Entries are valid if at least 1 character type is selected - if not, there will be an error and it starts over (so there will be a loop)
 //the function will need to have 4 character libraries (reference OWASP for special characters, upper case, lower case, numbers), prompts the user to select which libraries to use (must be at least 1, be min 8 and max 128 characters; 
-function generatePassword(){ 
-//adding a log to let dev know when button is pressed.
-console.log ("The button was clicked."); 
-  window.prompt ("Password length (min 8 - max 128)?"); 
-  window.prompt ("Use ABCs uppercase (Y/N)?"); 
-  window.prompt ("Use ABCs lowercase (Y/N)?");
-  window.prompt ("Use numbers 0-9 (Y/N)?");
-  window.prompt ("Use special characters (Y/N)?");
+//function generatePassword(){ 
+// //adding a log to let dev know when button is pressed.
+// console.log ("The button was clicked."); 
+//   // window.prompt ("Password length (min 8 - max 128)?"); 
+//   window.prompt ("Use ABCs uppercase (Y/N)?"); 
+//   window.prompt ("Use ABCs lowercase (Y/N)?");
+//   window.prompt ("Use numbers 0-9 (Y/N)?");
+//   window.prompt ("Use special characters (Y/N)?");
 
 //TODO you are going to need to store the password to a variable and return that variable
-return ("hello!")
-}
+// return ("hello!")
+// }
 
 // Add event listener to generate button; once the user clicks the button, it will call the writepassword function
 generateBtn.addEventListener("click", writePassword);
 
-generateLowercase;
+generatePassword();
