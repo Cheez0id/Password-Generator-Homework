@@ -1,11 +1,26 @@
 // Assignment Code
 //creates variable that targets the generate ID.  The generate id is a button.
 var generateBtn = document.querySelector("#generate");
-var lowercase = "abcdefghijklmnopqrstuvwxy"; 
-var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numeric = "0123456789";
-var punctuation = "!@#$%^&*()_+~`|}{[]\:;?><,./-=";
-console.log (lowercase.length);
+var lowercasetext = "abcdefghijklmnopqrstuvwxy"; 
+var uppercasetext = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numerictext = "0123456789";
+var punctuationtext = "!@#$%^&*()_+~`|}{[]\:;?><,./-=";
+
+function generateLowercase(){      
+  console.log ("lowercase function is working!");
+}
+
+// //function makeid() {
+//   var text = "";
+//   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+//   for (var i = 0; i < 5; i++)
+//     text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+//   return text;
+// }
+
+// console.log(makeid());
 
 // Write password to the #password input
 // this is the writepassword function - the script states locally that the variable password is equal to the generate password function, and the variable passwordtext is equal to the password ID. 
@@ -27,7 +42,12 @@ function writePassword() {
 //the function will need to have 4 character libraries (reference OWASP for special characters, upper case, lower case, numbers), prompts the user to select which libraries to use (must be at least 1, be min 8 and max 128 characters; 
 function generatePassword(){ 
 //adding a log to let dev know when button is pressed.
-console.log ("The button was clicked."); window.prompt ("Use ABCs uppercase?");
+console.log ("The button was clicked."); 
+  window.prompt ("Password length (min 8 - max 128)?"); 
+  window.prompt ("Use ABCs uppercase (Y/N)?"); 
+  window.prompt ("Use ABCs lowercase (Y/N)?");
+  window.prompt ("Use numbers 0-9 (Y/N)?");
+  window.prompt ("Use special characters (Y/N)?");
 
 //TODO you are going to need to store the password to a variable and return that variable
 return ("hello!")
@@ -35,3 +55,5 @@ return ("hello!")
 
 // Add event listener to generate button; once the user clicks the button, it will call the writepassword function
 generateBtn.addEventListener("click", writePassword);
+
+generateLowercase;
