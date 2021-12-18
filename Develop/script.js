@@ -39,7 +39,10 @@ function generatePassword() {
     var confirmSpecial = window.confirm("Use special characters?");
     if (confirmLowercase === true, confirmUppercase === true, confirmNumbers === true, confirmSpecial === true) {
       for (var index = 0; index < passwordLength; index++) {
-        generatedPassword += (lowercasetext.charAt(Math.floor(Math.random() * lowercasetext.length)) + uppercasetext.charAt(Math.floor(Math.random() * uppercasetext.length)))
+        generatedPassword += (lowercasetext.charAt(Math.floor(Math.random() * lowercasetext.length)) 
+        + uppercasetext.charAt(Math.floor(Math.random() * uppercasetext.length))
+        + numerictext.charAt(Math.floor(Math.random() * numerictext.length))
+        + punctuationtext.charAt(Math.floor(Math.random() * punctuationtext.length)))
       } return generatedPassword;
     }
   }
