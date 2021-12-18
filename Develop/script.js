@@ -1,23 +1,50 @@
 // Assignment Code
 //creates variable that targets the generate ID.  The generate id is a button.
 var generateBtn = document.querySelector("#generate");
-var lowercasetext = "abcdefghijklmnopqrstuvwxy"; 
+var lowercasetext = "abcdefghijklmnopqrstuvwxy";
 var uppercasetext = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numerictext = "0123456789";
 var punctuationtext = "!@#$%^&*()_+~`|}{[]\:;?><,./-=";
+var generatedPassword = "";
 
+// if condition syntax (ELSE IF IS FOR MORE THAN 1 CONDITION)
+// if(condition1) {
+//   do some code
+// } else if (condition2) {
+//   do other code
+// } else {
+//   if all else fails...last resort
+// }
 
+// var color = 'green'
+// if(color === 'red') {
+//   console.log('RED MEANS STOP')
+// } else if (color === 'yellow') {
+//   console.log('YELLOW MEANS CAUTION')
+// } else {
+//   console.log('I AM NOT WORTHY')
+// }
 
-function generatePassword(){      
-  console.log ("function is still working!"); 
-  var lowercase = window.prompt ("Password length (min 8 - max 128)?", "8-128"); 
+function generatePassword() {
+  console.log("the button was clicked!");
+  var passwordLength = window.prompt("Password length (min 8 - max 128)?", "8-128");
   // the prompt called lowercase is going to return whatever the input is (text); else "cancel" will stop stuff.
-  if (lowercase === null) {
+  if (passwordLength === null) {
     return;
-  } else {
-    console.log (lowercase + "this second part is doing something!")
+  }
+  if (passwordLength >= 8 && passwordLength <= 128) {
+    var confirmLowercase = window.confirm("Use Lowercase ABC's?");
+    var confirmUppercase = window.confirm("Use Uppercase ABC's?");
+    var confirmNumbers = window.confirm("Use Numbers (0-9)?");
+    var confirmSpecial = window.confirm("Use special characters?");
+    if (confirmLowercase === true, confirmUppercase === true, confirmNumbers === true, confirmSpecial === true) {
+      for (var index = 0; index < passwordLength; index++) {
+        generatedPassword += lowercasetext.charAt(Math.floor(Math.random() * lowercasetext.length))
+      } return generatedPassword;
+    }
   }
 }
+
 
 
 
@@ -38,13 +65,13 @@ function generatePassword(){
 
 function writePassword() {
   //we are calling the below generate password function and "storing the value of that function in the variable named password"; 
-  
+
   var password = generatePassword();
 
   //This selects the ID "password"
   var passwordText = document.querySelector("#password");
 
-// this takes the value of the generated password and plugs it in to what is displayed on the screen
+  // this takes the value of the generated password and plugs it in to what is displayed on the screen
   passwordText.value = password;
 
 }
@@ -67,4 +94,4 @@ function writePassword() {
 // Add event listener to generate button; once the user clicks the button, it will call the writepassword function
 generateBtn.addEventListener("click", writePassword);
 
-generatePassword();
+// generatePassword();
